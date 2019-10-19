@@ -2,7 +2,7 @@
 
 DEBIAN_FRONTEND=noninteractive
 
-. /vagrant-fun/config
+source /quick-wordpress/config
 
 echo "***************************** Install Packages ***************************"
 sudo -E apt-get update
