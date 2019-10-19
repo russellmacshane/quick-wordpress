@@ -1,4 +1,4 @@
-# Quick Wordpress
+# Quick WordPress
 Quick WordPress Installation using Vagrant
 
 The goal of this project is to create a quick virtual machine setup with a WordPress installation for testing purposes. The following technologies are automatically installed for you:
