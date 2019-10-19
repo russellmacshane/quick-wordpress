@@ -49,9 +49,17 @@ sudo -E mv wp-cli.phar /usr/local/bin/wp
 
 echo "***************************** Install WordPress **************************"
 cd /var/www/html
-wp core download
+wp core download --version=$wp_version
 wp core config --dbhost=localhost --dbname=$wp_db --dbuser=$wp_db_user --dbpass=$wp_db_password
 wp core install --url=192.168.33.10 --title="$wp_site_title" --admin_name=$wp_admin_user --admin_password=$wp_admin_password --admin_email=$wp_admin_email
+
+echo "***************************** Plugins ************************************"
+wp plugin delete hello
+
+for plugin in "${plugins[@]}"
+do
+    wp plugin install $plugin --activate
+done
 
 echo "***************************** Modify Apache Docroot **********************"
 sudo -E usermod -a -G www-data $USER
