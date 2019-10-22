@@ -16,7 +16,7 @@ The goal of this project is to create a quick virtual machine setup with a WordP
 
 ## Installation Instructions
 1. Find a directory on your computer that you'd like to install this repo
-2. `$ git clone git@github.com:russellmacshane/quick-wordpress.git`
+2. `$ git clone git@github.com:russellmacshane/quick-wordpress.git` or `git clone https://github.com/russellmacshane/quick-wordpress.git` if you don't have your [ssh keys setup](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 3. `$ cd quick-wordpress`
 4. Your are strongly encouraged to modify the default passwords and WordPress setup information in the [config](./config) file
 5. `$ vagrant up`

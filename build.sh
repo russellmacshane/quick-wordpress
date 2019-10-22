@@ -6,7 +6,7 @@ source /quick-wordpress/config
 
 echo "***************************** Install Packages ***************************"
 sudo -E apt-get update
-sudo -E apt-get -y upgrade
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 
 echo "***************************** Install Apache *****************************"
 sudo -E apt-get -y install apache2
