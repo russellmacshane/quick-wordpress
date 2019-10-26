@@ -21,6 +21,7 @@ sudo rm -rf /var/www/html/*
 
 echo "***************************** Restore Files ******************************"
 sudo mv /tmp/wp-bkup/var/www/html/* /var/www/html/
+sudo chown -R www-data: /var/www/html/
 
 echo "***************************** Restore Database ***************************"
 sudo mysql $wp_db < /tmp/wp-bkup/datadump.sql
