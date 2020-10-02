@@ -5,10 +5,14 @@ source /quick-wordpress/config
 echo "***************************** WordPress Restore **************************"
 read -p "Enter the filename of the backup you would like to restore: " file
 
-backup_file=/quick-wordpress/backup/$file
+backup_dir=/quick-wordpress/backup
+backup_file=$backup_dir/$file
 
 if [ ! -f $backup_file ]; then
     echo "$backup_file not found!" 1>&2
+    echo ""
+    echo "Available backups in $backup_dir"
+    ls $backup_dir
     exit 1
 fi
 
