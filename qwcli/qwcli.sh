@@ -7,13 +7,14 @@ cli_help() {
   echo "
 $cli_name
 Quick WordPress CLI
-Version: 0.1.0
+Version: 1.0.0
 https://github.com/russellmacshane/quick-wordpress
 
 Usage: $cli_name [command]
 
 Commands:
   backup    Backup
+  list      List Backups
   restore   Restore
   *         Help
 "
@@ -23,6 +24,9 @@ Commands:
 case "$1" in
   backup|b)
     /quick-wordpress/qwcli/backup.sh
+    ;;
+  list|l)
+    ls /quick-wordpress/backup
     ;;
   restore|r)
     /quick-wordpress/qwcli/restore.sh
