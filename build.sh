@@ -41,6 +41,9 @@ sudo -E mysql -u root -p$mysql_root_password -e "create database $wp_db;"
 sudo -E mysql -u root -p$mysql_root_password -e "GRANT ALL PRIVILEGES ON $wp_db.* TO $wp_db_user@localhost IDENTIFIED BY '$wp_db_password'"
 sudo -E mysql -u root -p$mysql_root_password -e "GRANT ALL PRIVILEGES ON $wp_db.* TO phpmyadmin@localhost IDENTIFIED BY '$phpyadmin_password'"
 
+echo "***************************** Install QWCli *****************************"
+sudo -E ln -s /quick-wordpress/qwcli/qwcli.sh /usr/local/bin/qwcli
+
 echo "***************************** Install WPCli *****************************"
 cd /home/$USER
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
