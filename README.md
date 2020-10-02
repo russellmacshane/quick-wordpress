@@ -32,18 +32,8 @@ The goal of this project is to create a quick virtual machine setup with a WordP
 
 ## Backup and Restores
 1. In order to do backup and restores login to your virtual machine - `$ vagrant ssh` 
-2. `$ cd /quick-wordpress`
-3. `$ ./backup.sh` and follow the on screen instructions
-4. Backups are saved in the `/quick-wordpress/backups` directory 
-5. If you'd like to restore from a previous backup - `$ ./restore.sh` and follow the on screen instructions
+2. `$ qwcli backup` and follow the on screen instructions
+3. If you'd like to restore from a previous backup - `$ qwcli restore` and follow the on screen instructions
 
 ## Cleanup
 1. If you are ready to delete your WordPress VM from you local machine - `$ vagrant destroy -f`
-
-## Project Roadmap
-* ~~LAMP Stack installed on Virtual Machine with WordPress using Vagrant~~
-* ~~Plugin installations on initial WordPress install~~
-* ~~Site Backups~~
-* ~~Site Restores~~
-* Web Application instead of bash scripts for WordPress install, backup, and restore
-* Modifications to WP details in order to give a working WordPress backup to a host
