@@ -13,10 +13,12 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker
 
-COPY . /quick-wordpress
+COPY . /home/docker/quick-wordpress
 
-WORKDIR /quick-wordpress
+WORKDIR /home/docker/quick-wordpress
+
+RUN sudo chown -R docker:docker /home/docker/quick-wordpress/
 
 RUN ./build.sh
 
-CMD ./service-start.sh
+ENTRYPOINT ["./service-start.sh"]

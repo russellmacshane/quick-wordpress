@@ -23,13 +23,13 @@ Commands:
 
 case "$1" in
   backup|b)
-    /quick-wordpress/qwcli/backup.sh
+    /home/docker/quick-wordpress/qwcli/backup.sh
     ;;
   list|l)
-    ls /quick-wordpress/backup
+    ls /home/docker/quick-wordpress/backup
     ;;
   restore|r)
-    /quick-wordpress/qwcli/restore.sh
+    /home/docker/quick-wordpress/qwcli/restore.sh
     ;;
   *)
     cli_help

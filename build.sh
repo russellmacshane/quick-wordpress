@@ -2,7 +2,7 @@
 
 DEBIAN_FRONTEND=noninteractive
 
-source /quick-wordpress/config
+source /home/docker/quick-wordpress/config
 
 echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
 
@@ -42,7 +42,7 @@ sudo -E mysql -u root -p$mysql_root_password -e "GRANT ALL PRIVILEGES ON $wp_db.
 sudo -E mysql -u root -p$mysql_root_password -e "GRANT ALL PRIVILEGES ON $wp_db.* TO phpmyadmin@localhost IDENTIFIED BY '$phpyadmin_password'"
 
 echo "***************************** Install QWCli *****************************"
-sudo -E ln -s /quick-wordpress/qwcli/qwcli.sh /usr/local/bin/qwcli
+sudo -E ln -s /home/docker/quick-wordpress/qwcli/qwcli.sh /usr/local/bin/qwcli
 
 echo "***************************** Install WPCli *****************************"
 cd /home/$(whoami)
@@ -54,7 +54,7 @@ echo "***************************** Install WordPress **************************
 cd /var/www/html
 wp core download --version=$wp_version
 wp core config --dbhost=localhost --dbname=$wp_db --dbuser=$wp_db_user --dbpass=$wp_db_password
-wp core install --url=127.0.0.1 --title="$wp_site_title" --admin_name=$wp_admin_user --admin_password=$wp_admin_password --admin_email=$wp_admin_email
+wp core install --url=localhost --title="$wp_site_title" --admin_name=$wp_admin_user --admin_password=$wp_admin_password --admin_email=$wp_admin_email
 
 echo "***************************** Plugins ************************************"
 wp plugin delete hello

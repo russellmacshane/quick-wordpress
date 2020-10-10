@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /quick-wordpress/config
+source /home/docker/quick-wordpress/config
 
 echo "***************************** WordPress Backup **************************"
 run=true
@@ -32,8 +32,8 @@ echo "***************************** Backup Database ****************************
 sudo mysqldump $wp_db > datadump.sql
 
 echo "***************************** Backups Files ******************************"
-mkdir -p /quick-wordpress/backup
-tar -cjvf /quick-wordpress/backup/$backup_file /var/www/html datadump.sql
+mkdir -p /home/docker/quick-wordpress/backup
+tar -cjvf /home/docker/quick-wordpress/backup/$backup_file /var/www/html datadump.sql
 
 echo "***************************** Cleanup ************************************"
 rm datadump.sql

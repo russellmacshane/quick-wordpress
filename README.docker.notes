@@ -1,0 +1,10 @@
+Docker Setup
+============
+
+docker build -t quick-wordpress .
+docker run --rm -p 80:80 quick-wordpress
+
+docker exec -it {container} /bin/bash
+docker exec -it {container} qwcli
+
+docker stop {container}
