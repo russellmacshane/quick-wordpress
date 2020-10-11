@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  qwp:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - .:/home/docker/quick-wordpress
