@@ -1,11 +1,11 @@
 #!/bin/bash
 
-source /quick-wordpress/config
+source /home/docker/quick-wordpress/config
 
 echo "***************************** WordPress Restore **************************"
 read -p "Enter the filename of the backup you would like to restore: " file
 
-backup_dir=/quick-wordpress/backup
+backup_dir=/home/docker/quick-wordpress/backup
 backup_file=$backup_dir/$file
 
 if [ ! -f $backup_file ]; then
